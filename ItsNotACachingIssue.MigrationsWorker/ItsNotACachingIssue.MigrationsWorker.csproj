@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>dotnet-ItsNotACachingIssue.MigrationsWorker-06c14b9a-e947-47fe-8ac6-bf976b2fad16</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspire.Microsoft.Data.SqlClient" Version="9.1.0" />
+    <PackageReference Include="Aspire.Microsoft.EntityFrameworkCore.SqlServer" Version="9.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ItsNotACachingIssue.Data\ItsNotACachingIssue.Data.csproj" />
+    <ProjectReference Include="..\ItsNotACachingIssue.ServiceDefaults\ItsNotACachingIssue.ServiceDefaults.csproj" />
+    <ProjectReference Include="..\ItsNotACachingIssue.Shared\ItsNotACachingIssue.Shared.csproj" />
+  </ItemGroup>
+</Project>
