@@ -6,7 +6,7 @@ namespace ItsNotACachingIssue.UserAPI.Controllers
     [Route("users")]
     public class UserController(UserDbContext context) : Controller
     {
-        private UserDbContext _context = context;
+        private readonly UserDbContext _context = context;
 
         [HttpPut("edit/{userId}/{updatedFirstName}")]
         public async Task<IActionResult> ChangeFirstName(
@@ -24,7 +24,9 @@ namespace ItsNotACachingIssue.UserAPI.Controllers
 
             await _context.SaveChangesAsync();
 
-            return Ok();
+            var contextId = _context.ContextId;
+
+            return NoContent();
         }
     }
 }
